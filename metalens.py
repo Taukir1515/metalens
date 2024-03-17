@@ -7,9 +7,10 @@ base_file_name = "metalens_"
 i=1  # Starting counter
 
 try:
-    image_name = input("Enter Image file name with extension: ") 
-    image1 = Image.open(image_name)
-    im=image1.show() # Display Image
+    image_name = input("Enter Image file name with extension: ") # Input file name
+    if image_name.lower().endswith((".jpg",".jpeg",".tiff", ".tif")): 
+        image1 = Image.open(image_name)
+        display_image=image1.show() # Display Image
 
     img= open(image_name,'rb') # giving reading in binary permission
 
@@ -21,14 +22,19 @@ try:
         while os.path.exists(output_in_txt):
             i=i+1 # Incrementing counter value
             output_in_txt=f"{base_file_name}{i}.txt"
-        
+            
+            
         file_name=open(output_in_txt,"w")
+        file_name.write(f"### METADATA FOR '{image_name}' ###\n------------------------------------------------------------\n")
+        
         for key,value in exifdata.items():
+            
             if key!= "JPEGThumbnail":
                 file_name.write(f"{key:50}:{value}\n") # Write to Text format
+                
                 print(f"{key:50}:{value}") 
                 
-        print(f"<File saved in {output_in_txt}>")
+        print(f"...<File saved in {output_in_txt}>...")
                              
     else:
         print("no exifdata found")
