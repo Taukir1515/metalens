@@ -23,3 +23,14 @@ git clone https://github.com/Taukir1515/metalens.git
 git clone https://github.com/Taukir1515/metalens/blob/main/metalensGUI.py
 ```
 
+## Usage
+1. For CLI of metalens:
+```
+python metalens.py
+```
+
+2. For GUI of metalens:
+```
+python metalensGUI.py
+```
+
