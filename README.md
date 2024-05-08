@@ -19,6 +19,6 @@ git clone https://github.com/Taukir1515/metalens.git
 
 2. Clone for GUI:
 ```
-git clone https://github.com/Taukir1515/metalens/blob/main/metalensGUI.py
+git clone https://github.com/Taukir1515/metalens/blob/main/metalensGUI.git
 ```
 
