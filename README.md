@@ -8,21 +8,5 @@ Metalens EXIF Metadata Extractor is a Python tool that extracts EXIF metadata fr
 - Displays extracted metadata in the console.
 - Saves extracted metadata to text files.
 - Automatically generates unique filenames for output text files.
-- Simple graphical user interface (GUI).
-
-## Installation
-
-### Clone for CLI:
-
-```bash
-git clone https://github.com/Taukir1515/metalens.git
-```
-
-
-
-## Usage
-### For CLI of metalens:
-```
-python metalens.py
-```
+- Simple Command Line (CLI) and Graphical User interface (GUI).
 
