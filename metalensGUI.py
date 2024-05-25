@@ -100,26 +100,26 @@ def process_image():
                     mime_type = f"image/{file_name.split('.')[-1].lower()}"
                     exif_byte_order = ""
 
-                    file_output.write(f"FileSize {' ' * 40}:{file_size_mb:.3f} MB\n")
-                    file_output.write(f"FileCreationDate {' ' * 33}:{file_creation_date}\n")
-                    file_output.write(f"FileModifyDate {' ' * 35}:{file_modify_date}\n")
-                    file_output.write(f"FileAccessDate {' ' * 35}:{file_access_date}\n")
+                    file_output.write(f"FileSize {' ' * 42}:{file_size_mb:.3f} MB\n")
+                    file_output.write(f"Last Download/Copy Date {' ' * 26}:{file_creation_date} GMT+6.00\n")
+                    file_output.write(f"FileModifyDate {' ' * 35}:{file_modify_date} GMT+6.00\n") 
+                    file_output.write(f"FileAccessDate {' ' * 35}:{file_access_date} GMT+6.00\n")
                     file_output.write(f"FileType {' ' * 41}:{file_type}\n")
                     file_output.write(f"FileTypeExtension {' ' * 32}:{file_type_extension}\n")
                     file_output.write(f"MIMEType {' ' * 41}:{mime_type}\n")
                     file_output.write(f"ExifByteOrder {' ' * 36}:333{exif_byte_order}\n")
 
                     # Write metadata to the output_text_widget
-                    output_text_widget.insert(tk.END, f"\t //Metadata for {file_name} \n")
+                    output_text_widget.insert(tk.END, f"\t Metadata for {file_name} \n")
                     output_text_widget.insert(tk.END, "\t ********************************************************************************************\n")
                     output_text_widget.insert(tk.END, f"\t File Size {' ' * 40}:{file_size_mb:.3f} MB\n")
-                    output_text_widget.insert(tk.END, f"\t FileCreationDate {' ' * 33}:{file_creation_date}\n")
-                    output_text_widget.insert(tk.END, f"\t FileModifyDate {' ' * 35}:{file_modify_date}\n")
-                    output_text_widget.insert(tk.END, f"\t Last FileAccessDate {' ' * 30}:{file_access_date}\n")
-                    output_text_widget.insert(tk.END, f"\t FileType {' ' * 41}:{file_type}\n")
-                    output_text_widget.insert(tk.END, f"\t FileTypeExtension {' ' * 32}:{file_type_extension}\n")
-                    output_text_widget.insert(tk.END, f"\t MIMEType {' ' * 41}:{mime_type}\n")
-                    output_text_widget.insert(tk.END, f"\t ExifByteOrder {' ' * 36}:333{exif_byte_order}\n\n")
+                    output_text_widget.insert(tk.END, f"\t Last Download/Copy Date {' ' * 26}:{file_creation_date} GMT+6.00\n")
+                    output_text_widget.insert(tk.END, f"\t File Modify Date {' ' * 33}:{file_modify_date} GMT+6.00\n")
+                    output_text_widget.insert(tk.END, f"\t Last FileAccess Date {' ' * 29}:{file_access_date} GMT+6.00\n")
+                    output_text_widget.insert(tk.END, f"\t File Type {' ' * 40}:{file_type}\n")
+                    output_text_widget.insert(tk.END, f"\t File Type Extension {' ' * 30}:{file_type_extension}\n")
+                    output_text_widget.insert(tk.END, f"\t MIME Type {' ' * 40}:{mime_type}\n")
+                    output_text_widget.insert(tk.END, f"\t Exif Byte Order {' ' * 34}:333{exif_byte_order}\n\n")
 
                     # Write EXIF data
                     for key, value in exifdata.items():
